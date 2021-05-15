@@ -9,6 +9,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "standard": {
+    "parser": "babel-eslint"
+  },
   "devDependencies": {
     "autoprefixer": "^10.2.5",
     "git-commit-msg-linter": "^3.1.0",
