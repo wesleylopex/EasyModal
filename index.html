@@ -3,18 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tailwindcss modal</title>
+  <title>EasyModal</title>
   <link rel="stylesheet" href="assets/styles/tailwindcss/tailwind.css">
 </head>
 <body class="min-h-screen w-screen bg-gray-100">
-  <button class="open-my-modal px-4 py-2 bg-blue-600 rounded-sm text-sm font-medium text-white">Abril EasyModal</button> 
+  <button class="open-my-easy-modal px-4 py-2 bg-blue-600 rounded-sm text-sm font-medium text-white">Abril EasyModal</button> 
 
-  <div id="my-easy-modal" class="easy-modal">
+  <!-- EasyModal -->
+  <div class="my-easy-modal easy-modal">
     <div class="easy-modal__content">
       <h1>Do you really want to delete this record?</h1>
       <div class="mt-8 grid grid-cols-2 gap-4">
         <div>
-          <button class="close-my-modal w-full px-4 py-2 bg-gray-200 rounded-sm text-sm font-medium">Voltar</button>
+          <button class="close-my-easy-modal w-full px-4 py-2 bg-gray-200 rounded-sm text-sm font-medium">Voltar</button>
         </div>
         <div>
           <button class="w-full px-4 py-2 bg-blue-600 rounded-sm text-sm font-medium text-white">Sim, excluir</button>
@@ -27,12 +28,14 @@
     import EasyModal from './assets/scripts/EasyModal/EasyModal.js'
  
     const myEasyModal = new EasyModal({
-      el: '#my-easy-modal',
-      open: '.open-my-modal',
-      close: '.close-my-modal'
+      el: '.my-easy-modal',
+      open: '.open-my-easy-modal',
+      close: '.close-my-easy-modal',
+      beforeOpen: () => console.log('beforeOpen')
     })
 
     myEasyModal.start()
+    myEasyModal.open()
   </script>
 </body>
 </html>

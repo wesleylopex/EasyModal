@@ -20,6 +20,28 @@ class EasyModal {
     this.startClose()
   }
 
+  open () {
+    this.beforeOpen()
+    this.modal.classList.add('easy-modal--active')
+  }
+
+  close () {
+    this.beforeClose()
+    this.modal.classList.remove('easy-modal--active')
+  }
+
+  beforeOpen () {
+    if (this.settings.beforeOpen && typeof this.settings.beforeOpen === 'function') {
+      this.settings.beforeOpen()
+    }
+  }
+
+  beforeClose () {
+    if (this.settings.beforeClose && typeof this.settings.beforeClose === 'function') {
+      this.settings.beforeClose()
+    }
+  }
+
   startOpen () {
     if (!this.settings.open) return false
 
@@ -27,7 +49,7 @@ class EasyModal {
       
     openElements.forEach(element => {
       element.addEventListener('click', () => {
-        this.modal.classList.add('easy-modal--active')
+        this.open()
       })
     })
   }
@@ -39,7 +61,7 @@ class EasyModal {
       
     closeElements.forEach(element => {
       element.addEventListener('click', () => {
-        this.modal.classList.remove('easy-modal--active')
+        this.close()
       })
     })
   }
