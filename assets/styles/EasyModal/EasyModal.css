@@ -23,3 +23,9 @@
   max-width: 28rem;
   background-color: #fff;
 }
+
+@media (min-width: 640px) {
+  .easy-modal__content {
+    width: 100%;
+  }
+}
