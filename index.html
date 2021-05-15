@@ -6,7 +6,78 @@
   <title>Tailwindcss modal</title>
   <link rel="stylesheet" href="assets/styles/tailwindcss/tailwind.css">
 </head>
-<body>
-  
+<body class="min-h-screen w-screen bg-gray-100">
+  <button class="open-my-modal px-4 py-2 bg-blue-600 rounded-sm text-sm font-medium text-white">Abril EasyModal</button> 
+
+  <div id="my-easy-modal" class="easy-modal">
+    <div class="easy-modal__content">
+      <h1>Do you really want to delete this record?</h1>
+      <div class="mt-8 grid grid-cols-2 gap-4">
+        <div>
+          <button class="close-my-modal w-full px-4 py-2 bg-gray-200 rounded-sm text-sm font-medium">Voltar</button>
+        </div>
+        <div>
+          <button class="w-full px-4 py-2 bg-blue-600 rounded-sm text-sm font-medium text-white">Sim, excluir</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    class EasyModal {
+      modal = null
+      settings = null
+
+      constructor (settings) {
+        if (!settings) {
+          throw new Error('Missing parameter: settings');
+        }
+
+        if (!settings.el) {
+          throw new Error('Missing parameter: el');
+        }
+
+        this.modal = document.querySelector(settings.el)
+        this.settings = settings
+      }
+
+      start () {
+        this.startOpen()
+        this.startClose()
+      }
+
+      startOpen () {
+        if (!this.settings.open) return false
+
+        const openElements = document.querySelectorAll(this.settings.open)
+          
+        openElements.forEach(element => {
+          element.addEventListener('click', () => {
+            this.modal.classList.add('easy-modal--active')
+          })
+        })
+      }
+
+      startClose () {
+        if (!this.settings.close) return false
+        
+        const closeElements = document.querySelectorAll(this.settings.close)
+          
+        closeElements.forEach(element => {
+          element.addEventListener('click', () => {
+            this.modal.classList.remove('easy-modal--active')
+          })
+        })
+      }
+    }
+
+    const myEasyModal = new EasyModal({
+      el: '#my-easy-modal',
+      open: '.open-my-modal',
+      close: '.close-my-modal'
+    })
+
+    myEasyModal.start()
+  </script>
 </body>
 </html>
