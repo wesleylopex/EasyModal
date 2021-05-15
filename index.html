@@ -30,8 +30,10 @@
     const myEasyModal = new EasyModal({
       el: '.my-easy-modal',
       open: '.open-my-easy-modal',
+      persistent: true,
       close: '.close-my-easy-modal',
-      beforeOpen: () => console.log('beforeOpen')
+      beforeOpen: () => console.log('before open'),
+      beforeClose: () => console.log('before close')
     })
 
     myEasyModal.start()

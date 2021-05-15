@@ -18,6 +18,19 @@ class EasyModal {
   start () {
     this.startOpen()
     this.startClose()
+    this.onClickOutside()
+  }
+
+  onClickOutside () {
+    const modalContent = this.modal.querySelector('.easy-modal__content')
+
+    if (!modalContent) return false
+
+    this.modal.addEventListener('click', event => {
+      if (!this.settings.persistent && !modalContent.contains(event.target)) {
+        this.close()
+      }
+    })
   }
 
   open () {
