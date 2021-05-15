@@ -17,7 +17,7 @@ git clone https://github.com/wesleylopex/EasyModal.git
 <div class="my-easy-modal easy-modal">
   <div class="easy-modal__content">
     <h1>
-      This is you customizable EasyModal body
+      This is your customizable EasyModal body
     </h1>
     <button class="close-my-easy-modal">
       Close EasyModal
