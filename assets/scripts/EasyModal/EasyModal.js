@@ -23,46 +23,34 @@ class EasyModal {
   }
 
   start () {
-    this.startOpen()
-    this.startClose()
-    this.startPersistent()
-  }
-
-  startPersistent () {
-    const modalContent = this.modal.querySelector('.easy-modal__content')
-
-    if (!modalContent) return false
-
-    this.modal.addEventListener('click', event => {
-      if (!this.settings.persistent && !modalContent.contains(event.target)) {
-        this.close()
-      }
-    })
+    this._startOpen()
+    this._startClose()
+    this._startPersistent()
   }
 
   open () {
-    this.beforeOpen()
+    this._beforeOpen()
     this.modal.classList.add('easy-modal--active')
   }
 
   close () {
-    this.beforeClose()
+    this._beforeClose()
     this.modal.classList.remove('easy-modal--active')
   }
 
-  beforeOpen () {
+  _beforeOpen () {
     if (this.settings.beforeOpen && typeof this.settings.beforeOpen === 'function') {
       this.settings.beforeOpen()
     }
   }
 
-  beforeClose () {
+  _beforeClose () {
     if (this.settings.beforeClose && typeof this.settings.beforeClose === 'function') {
       this.settings.beforeClose()
     }
   }
 
-  startOpen () {
+  _startOpen () {
     if (!this.settings.open) return false
 
     const openElements = document.querySelectorAll(this.settings.open)
@@ -74,7 +62,7 @@ class EasyModal {
     })
   }
 
-  startClose () {
+  _startClose () {
     if (!this.settings.close) return false
     
     const closeElements = document.querySelectorAll(this.settings.close)
@@ -83,6 +71,18 @@ class EasyModal {
       element.addEventListener('click', () => {
         this.close()
       })
+    })
+  }
+
+  _startPersistent () {
+    const modalContent = this.modal.querySelector('.easy-modal__content')
+
+    if (!modalContent) return false
+
+    this.modal.addEventListener('click', event => {
+      if (!this.settings.persistent && !modalContent.contains(event.target)) {
+        this.close()
+      }
     })
   }
 }
