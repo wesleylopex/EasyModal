@@ -1,6 +1,13 @@
 class EasyModal {
   modal = null
-  settings = null
+  settings = {
+    el: null,
+    persistent: false,
+    open: null,
+    close: null,
+    beforeOpen: null,
+    beforeClose: null
+  }
 
   constructor (settings) {
     if (!settings) {
