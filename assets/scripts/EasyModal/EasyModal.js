@@ -18,10 +18,10 @@ class EasyModal {
   start () {
     this.startOpen()
     this.startClose()
-    this.onClickOutside()
+    this.startPersistent()
   }
 
-  onClickOutside () {
+  startPersistent () {
     const modalContent = this.modal.querySelector('.easy-modal__content')
 
     if (!modalContent) return false
