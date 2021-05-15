@@ -1,26 +1,25 @@
 .easy-modal {
-  display: none;
-  place-items: center;
+  visibility: hidden;
   background-color: rgba(0, 0, 0, 0.4);
-  z-index: 9999;
+
+  display: grid;
+  place-items: center;
 
   height: 100vh;
   width: 100vw;
   
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  position: fixed;
+  left: 0;
+  top: 0;
 }
 
 .easy-modal.easy-modal--active {
-  display: grid;
+  visibility: visible;
+  z-index: 9999;
 }
 
 .easy-modal__content {
   width: 90%;
   max-width: 28rem;
   background-color: #fff;
-  border-radius: 0.125rem;
-  padding: 1rem;
 }
