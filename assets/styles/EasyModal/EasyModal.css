@@ -13,7 +13,7 @@
   top: 0;
 }
 
-.easy-modal.fade{
+.easy-modal.fade {
   opacity: 0;
   transition: 0.2s;
 }
