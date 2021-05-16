@@ -13,7 +13,7 @@
   top: 0;
 }
 
-.easy-modal.fade {
+.easy-modal.easy-modal--fade {
   opacity: 0;
   transition: 0.2s;
 }
@@ -36,7 +36,7 @@
   }
 }
 
-.easy-modal.easy-modal--active.fade {
+.easy-modal.easy-modal--active.easy-modal--fade {
 	opacity: 1;
 	animation-name: fadeInOpacity;
 	animation-iteration-count: 1;
