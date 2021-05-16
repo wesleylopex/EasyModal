@@ -48,12 +48,12 @@ git clone https://github.com/wesleylopex/EasyModal.git
 ## Options
 |Attribute|Required|Default|Description|
 |-|-|-|-|
-|el|true|null|Selector to find your EasyModal|
-|persistent|false|false|If true, modal won't close on click outrsie|
-|open|false|null|Element to click and open modal|
-|close|false|null|Element to click and close modal|
-|beforeOpen|false|null|Function to run before modal opens|
-|beforeClose|false|null|Function to run before modal closes|
+|el|yes|null|Selector to find your EasyModal|
+|persistent|no|false|If true, modal won't close on click outrsie|
+|open|no|null|Element to click and open modal|
+|close|no|null|Element to click and close modal|
+|beforeOpen|no|null|Function to run before modal opens|
+|beforeClose|no|null|Function to run before modal closes|
 
 ## Available functions
 |Function|Description|
