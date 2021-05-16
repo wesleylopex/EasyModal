@@ -49,7 +49,6 @@ git clone https://github.com/wesleylopex/EasyModal.git
 |Attribute|Required|Default|Description|
 |-|-|-|-|
 |el|true|null|Selector to find your EasyModal|
-|el|true|null|Selector to find your EasyModal|
 |persistent|false|false|If true, modal won't close on click outrsie|
 |open|false|null|Element to click and open modal|
 |close|false|null|Element to click and close modal|
