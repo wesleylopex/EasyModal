@@ -62,3 +62,5 @@ git clone https://github.com/wesleylopex/EasyModal.git
 |open()|Opens the modal
 |close()|Closes the modal
 
+## Repository author
+[Wesley Lopes de Oliveira](https://github.com/wesleylopex)
