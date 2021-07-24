@@ -14,7 +14,7 @@ git clone https://github.com/wesleylopex/EasyModal.git
 ## Add HTML
 
 ```HTML
-<div class="my-easy-modal easy-modal">
+<div class="my-easy-modal easy-modal easy-modal--fade">
   <div class="easy-modal__content">
     <h1>
       This is your customizable EasyModal body
